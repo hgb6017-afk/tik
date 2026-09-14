@@ -1,0 +1,39 @@
+name: Build Dopamine Rootless DEB
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Theos
+        uses: waruhachi/theos-action@v2.4.6
+        with:
+          theos-src: 'theos/theos'
+          theos-branch: 'master'
+          sdks-src: 'theos/sdks'
+          sdks-branch: 'master'
+          orion: 'false'
+
+      - name: Build Dopamine rootless package
+        run: |
+          make clean
+          make package FINALPACKAGE=1
+
+      - name: Show packages
+        run: |
+          find packages -maxdepth 1 -type f -print || true
+
+      - name: Upload DEB
+        uses: actions/upload-artifact@v4
+        with:
+          name: DLSLowRes-Dopamine-Rootless
+          path: packages/*.deb
+          if-no-files-found: error
