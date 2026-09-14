@@ -1,0 +1,16 @@
+{
+  "bundle_filter": "com.firsttouch.dls7",
+  "default_scale": 0.65,
+  "config_path_inside_DLS_sandbox": "Documents/dlslowres.txt",
+  "status_path_inside_DLS_sandbox": "Documents/dlslowres_status.txt",
+  "presets": [
+    0.75,
+    0.65,
+    0.55
+  ],
+  "hook": "CAMetalLayer setDrawableSize:",
+  "minimum_ios_target": "15.0",
+  "package_scheme": "rootless",
+  "jailbreak_target": "Dopamine / ElleKit",
+  "rootHide_app_list_required": false
+}

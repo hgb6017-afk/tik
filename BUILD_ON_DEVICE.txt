@@ -1,0 +1,11 @@
+Nếu đã có Theos RootHide trên thiết bị:
+
+  export THEOS=~/theos
+  cd DLSLowRes_RootHide
+  make clean
+  make package THEOS_PACKAGE_SCHEME=roothide
+
+File .deb sẽ nằm trong packages/.
+
+Sau khi cài bằng Sileo/Filza:
+RootHide Bootstrap -> App List -> bật DLS -> force close -> mở lại.

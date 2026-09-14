@@ -1,0 +1,9 @@
+Package: com.openai.dlslowres
+Name: DLS LowRes
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Description: Per-app Metal drawable resolution scaler for Dream League Soccer 26 on Dopamine/rootless.
+Maintainer: Local build
+Author: OpenAI
+Section: Tweaks
+Depends: ellekit | mobilesubstrate
